@@ -49,6 +49,7 @@ public class GlobalAuditLog {
 
     /**
      * 获取切点
+     * 除日志之外所有操作
      */
     @Pointcut(value = "execution(public * *..controller..*(..)) && !execution(public * *..AuditLogController.*(..))")
     public void pointCut() {
