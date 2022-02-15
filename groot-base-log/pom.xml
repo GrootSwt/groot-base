@@ -18,11 +18,6 @@
     <dependencies>
         <dependency>
             <groupId>com.groot</groupId>
-            <artifactId>groot-base-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.groot</groupId>
             <artifactId>groot-base-web</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
