@@ -41,6 +41,9 @@ public class GlobalAuditLog {
     @Resource
     private MultipartResolver multipartResolver;
 
+    @Value(value = "${spring.application.name}")
+    private String serviceName;
+
     @Value(value = "${groot.rabbit-mq.exchange-name}")
     private String exchangeName;
 
@@ -160,6 +163,8 @@ public class GlobalAuditLog {
         auditLogBean.setCreateTime(new Date());
         // 获取IP
         auditLogBean.setIp(getIpAddress(request));
+        // 服务名
+        auditLogBean.setServiceName(serviceName);
         return auditLogBean;
     }
 
