@@ -53,7 +53,7 @@ public class IdGenerator {
         }
     }
 
-    public synchronized static Long generateId() {
+    public synchronized static String generateId() {
         long l = System.currentTimeMillis();
         if (l == lastTimestamp) {
             sequence = (sequence + 1) & MAX_SEQUENCE;
@@ -66,7 +66,7 @@ public class IdGenerator {
             sequence = 0;
         }
         lastTimestamp = l;
-        return l << TIMESTAMP_SHIFT_LENGTH | workerId << WORK_ID_SHIFT_LENGTH | sequence;
+        return String.valueOf(l << TIMESTAMP_SHIFT_LENGTH | workerId << WORK_ID_SHIFT_LENGTH | sequence);
     }
 
 }

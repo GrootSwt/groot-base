@@ -13,12 +13,12 @@ import javax.persistence.MappedSuperclass;
 @Getter
 @Setter
 @MappedSuperclass
-public class BaseModel implements Persistable<Long> {
+public class BaseModel implements Persistable<String> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "Id_Generator")
     @GenericGenerator(name = "Id_Generator",strategy = "com.groot.base.web.generator.IdentifierGeneratorCustom")
-    private Long id;
+    private String id;
 
     @Override
     public boolean isNew() {
